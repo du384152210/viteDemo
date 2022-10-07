@@ -1,9 +1,16 @@
 <template>
-  <div>
+  <header>
+      <h2>header</h2>
+  </header>
+  <div class="box flex">
+    
+    <div class="left-nav">
+      <Tree v-for="(item,index) in data"  :key="index" :data="item" />
+    </div>
     <!-- <myHeader title="mytitle"/> -->
-    <Tree :data="data" @on-click="getData"/>
-    {{name}}-{{age}}-{{like}}
-    <button @click="handleClick">click</button>
+    
+    <!-- {{name}}-{{age}}-{{like}}
+    <button @click="handleClick">click</button> -->
   </div>
 </template>
 
@@ -52,5 +59,16 @@
 </script>
 
 <style scoped>
-
+.box {
+  height: 100%;
+}
+header {
+  padding: 15px;
+  border-bottom: 1px solid #dddddd;
+}
+.left-nav {
+  height: 100%;
+  width: 250px;
+  border-right: 1px solid #dddddd;
+}
 </style>
